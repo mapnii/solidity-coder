@@ -1,0 +1,22 @@
+pragma solidity 0.8.13;
+
+contract jalase2 {
+
+    struct dataman {
+        string esm;
+        uint sen;
+    }
+    mapping(address => dataman) private _datauser;
+
+function taghireesm(string memory _esm, uint _sen)public{
+     _datauser[msg.sender].esm = _esm;
+     _datauser[msg.sender].sen = _sen;
+    }
+    function getesm() public view returns(string memory){
+        return _datauser[msg.sender].esm;
+    }
+    function getsen() public view returns(uint){
+        return _datauser[msg.sender].sen;
+    }
+}
+//0xb27A31f1b0AF2946B7F582768f03239b1eC07c2c
